@@ -1,0 +1,69 @@
+$gradient: linear-gradient(rgb(78, 175, 182), rgb(33, 205, 127));
+$background: #333333;
+
+$breakpoint-mobile: 420px;
+
+.webcam-wrapper {
+  background: $background;
+  padding-top: 50px;
+  video {
+    width: auto;
+    // background: red;
+    // border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  // img {
+  //   width: 200px;
+  //   margin-top: 15px;
+  // }
+  button {
+    border-radius: 0;
+    background: $gradient;
+    color: #ffffff;
+    border: none;
+    transition-duration: 500ms;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+  .preview {
+    position: relative;
+    margin-top: 15px;
+    img {
+      width: 200px;
+      position: relative;
+    }
+    a {
+      position: absolute;
+      opacity: 0;
+      background: $gradient;
+      color: #ffffff;
+      border-radius: 0;
+      padding: 8px 20px;
+      transition-duration: 500ms;
+    }
+    &:hover {
+      a {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.surprise-btn {
+  transform: translateX(110px);
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .magic-wrapper {
+    padding: 0;
+    video {
+      height: 280px;
+    }
+    .preview {
+      img {
+        width: 180px;
+      }
+    }
+  }
+}
