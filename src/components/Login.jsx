@@ -4,7 +4,7 @@ import { useState } from "react";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
 
-function Login(props) {
+function Login() {
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
@@ -17,6 +17,7 @@ function Login(props) {
     axios
       .get("https://localhost:7244/api/login", {
         headers: {
+          Authorization: "authorize",
           Email: email,
           Password: password,
         },
